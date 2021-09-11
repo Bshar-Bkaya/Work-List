@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main Style CSS -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- icon moon -->
+    <link href="icomoon/style.css" rel="stylesheet" />
+    <title>ToDoList</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>To Do List</h1>
+      </header>
+
+      <section id="container-tasks">
+        <div class="task">
+          <span class="icon-star icon" title="تثبيت في الاعلى"></span>
+          <p class="task-text">task 1</p>
+          <div>
+            <span id="delet" class="icon-trash icon" title="حذف"></span>
+            <span class="icon-angry2 icon" title="انهاء"></span>
+          </div>
+        </div>
+
+        <div class="task">
+          <span class="icon-star icon" title="تثبيت في الاعلى"></span>
+          <p class="task-text">task 2</p>
+          <div>
+            <span id="delet" class="icon-trash icon" title="حذف"></span>
+            <span class="icon-angry2 icon" title="انهاء"></span>
+          </div>
+        </div>
+      </section>
+
+      <h2 lang="ar">سجل مهامك</h2>
+
+      <form action="">
+        <input type="text" placeholder="!اش بدك تعمل " lang="ar" />
+        <button id="save" class="icon-upload" title="Save"></button>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
