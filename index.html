@@ -8,7 +8,9 @@
     <link href="style.css" rel="stylesheet" />
     <!-- icon moon -->
     <link href="icomoon/style.css" rel="stylesheet" />
-    <title>ToDoList</title>
+    <title>ToDoList (Work List)</title>
+    <!-- Main JS -->
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -19,7 +21,7 @@
       <section id="container-tasks">
         <div class="task">
           <span class="icon-star icon" title="تثبيت في الاعلى"></span>
-          <p class="task-text">task 1</p>
+          <p class="task-text">EX: Task 1</p>
           <div>
             <span id="delet" class="icon-trash icon" title="حذف"></span>
             <span class="icon-angry2 icon" title="انهاء"></span>
@@ -28,7 +30,7 @@
 
         <div class="task">
           <span class="icon-star icon" title="تثبيت في الاعلى"></span>
-          <p class="task-text">task 2</p>
+          <p class="task-text">EX: Task 2</p>
           <div>
             <span id="delet" class="icon-trash icon" title="حذف"></span>
             <span class="icon-angry2 icon" title="انهاء"></span>
@@ -43,6 +45,7 @@
         <button id="save" class="icon-upload" title="Save"></button>
       </form>
     </div>
-    <script src="main.js"></script>
+    <!-- Add sweetalert -->
+    <script src="package/dist/sweetalert2.all.min.js"></script>
   </body>
 </html>
