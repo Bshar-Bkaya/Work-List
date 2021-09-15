@@ -119,11 +119,15 @@ containerTask.addEventListener("mouseout", (e) => {
 
 // Function to creat old tasks
 (function creatOldTasks() {
-  // For to print the old tasks
-  for (let [key, value] of Object.entries(localStorage)) {
-    if (key == "i") continue;
+  if (localStorage.length != 1) {
+    // remove the Ex tasks
+    containerTask.innerHTML = "";
 
-    const oldTask = ` 
+    // For to print the old tasks
+    for (let [key, value] of Object.entries(localStorage)) {
+      if (key == "i") continue;
+
+      const oldTask = ` 
       <div class="${key}">
         <span class="icon-star icon" title="تثبيت في الاعلى"></span>
         <p class="task-text" lang="ar">${value}</p>
@@ -132,9 +136,10 @@ containerTask.addEventListener("mouseout", (e) => {
           <span class="icon-angry2 icon" title="انهاء"></span>
         </div>
       </div>`;
-    containerTask.innerHTML += oldTask;
+      containerTask.innerHTML += oldTask;
 
-    // Focus on field
-    input.focus();
+      // Focus on field
+      input.focus();
+    }
   }
 })();
