@@ -162,4 +162,5 @@ button {
 .finished {
   text-decoration        : line-through;
   text-decoration-style  : wavy;
+  opacity                : .5;
 }

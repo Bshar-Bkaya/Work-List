@@ -77,6 +77,27 @@ containerTask.addEventListener("click", (e) => {
 
     // Delete Task From LocalStorage
     localStorage.removeItem(e.target.className);
+
+    if (containerTask.childElementCount == 0) {
+      containerTask.innerHTML = `
+        <div class="task">
+          <span class="icon-star icon" title="تثبيت في الاعلى"></span>
+          <p class="task-text">EX: Task 1</p>
+          <div>
+            <span id="delet" class="icon-trash icon" title="حذف"></span>
+            <span class="icon-angry2 icon" title="انهاء"></span>
+          </div>
+        </div>
+
+        <div class="task">
+          <span class="icon-star icon" title="تثبيت في الاعلى"></span>
+          <p class="task-text">EX: Task 2</p>
+          <div>
+            <span id="delet" class="icon-trash icon" title="حذف"></span>
+            <span class="icon-angry2 icon" title="انهاء"></span>
+          </div>
+        </div>`;
+    }
   } else if (e.target.classList.contains("icon-angry2")) {
     e.target.classList.remove("icon-angry2");
     e.target.classList.add("icon-heart");
