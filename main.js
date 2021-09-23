@@ -24,19 +24,23 @@ save.addEventListener("click", (e) => {
       confirmButtonText: "OK",
     });
   } else {
-    // check If Task Found Befor Creat It
-    for (let i = 0; i < containerTask.children.length; i++) {
-      if (containerTask.children[i].children[1].textContent == input.value) {
-        p = true;
-        input.value = "";
-        input.focus();
-        Swal.fire({
-          title: "warning",
-          text: "This Task Is Found",
-          icon: "warning",
-          confirmButtonText: "OK",
-        });
-        break;
+    if (containerTask.children[0].classList.contains("Exa")) {
+      containerTask.innerHTML = "";
+    } else {
+      // check If Task Found Befor Creat It
+      for (let i = 0; i < containerTask.children.length; i++) {
+        if (containerTask.children[i].children[1].textContent == input.value) {
+          p = true;
+          input.value = "";
+          input.focus();
+          Swal.fire({
+            title: "warning",
+            text: "This Task Is Found",
+            icon: "warning",
+            confirmButtonText: "OK",
+          });
+          break;
+        }
       }
     }
   }
@@ -80,22 +84,10 @@ containerTask.addEventListener("click", (e) => {
 
     if (containerTask.childElementCount == 0) {
       containerTask.innerHTML = `
-        <div class="task">
-          <span class="icon-star icon" title="تثبيت في الاعلى"></span>
-          <p class="task-text">EX: Task 1</p>
-          <div>
-            <span id="delet" class="icon-trash icon" title="حذف"></span>
-            <span class="icon-angry2 icon" title="انهاء"></span>
-          </div>
-        </div>
-
-        <div class="task">
-          <span class="icon-star icon" title="تثبيت في الاعلى"></span>
-          <p class="task-text">EX: Task 2</p>
-          <div>
-            <span id="delet" class="icon-trash icon" title="حذف"></span>
-            <span class="icon-angry2 icon" title="انهاء"></span>
-          </div>
+        <div class="task Exa">
+          <p class="task-text" style="margin-left: auto; margin-right: auto">
+            No Tasks To Shwo!!
+          </p>
         </div>`;
     }
   } else if (e.target.classList.contains("icon-angry2")) {
