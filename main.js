@@ -24,8 +24,10 @@ save.addEventListener("click", (e) => {
       confirmButtonText: "OK",
     });
   } else {
-    if (containerTask.children[0].classList.contains("Exa")) {
-      containerTask.innerHTML = "";
+    if (containerTask.childElementCount !== 0) {
+      if (containerTask.children[0].classList.contains("Exa")) {
+        containerTask.innerHTML = "";
+      }
     } else {
       // check If Task Found Befor Creat It
       for (let i = 0; i < containerTask.children.length; i++) {
@@ -132,7 +134,7 @@ containerTask.addEventListener("mouseout", (e) => {
 
 // Function to creat old tasks
 (function creatOldTasks() {
-  if (localStorage.length != 1) {
+  if (localStorage.length > 1) {
     // remove the Ex tasks
     containerTask.innerHTML = "";
 
